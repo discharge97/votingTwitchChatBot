@@ -1,0 +1,47 @@
+<div id="voteform" *ngIf="isSetup">
+  <div>
+    <input class="formInput" type="text" #voteTitle placeholder="Voting title*">
+  </div>
+  <div>
+    <input class="formInput" type="text" #voteOpt placeholder="Voting option*">
+    <span class="btnAdd" (click)="addVoteOpt(voteOpt)">Add</span>
+  </div>
+  <div>
+    <input class="formInput formTime" type="number" value="1" min="1" #voteTime placeholder="Time"><span>
+      minutes</span>
+  </div>
+
+  <div class="voteOptionBox" *ngIf="votes?.options.length > 0">
+    <div class="voteOption" *ngFor="let vote of votes?.options;index as i"><span
+        (click)="removeVoteOpt(i)">X</span>{{i + 1}}.
+      {{vote.name}}</div>
+  </div>
+
+  <div>
+    <label for="favcolor">Color of the text font: </label>
+    <input type="color" id="favcolor" #color name="favcolor" value="#ffffff">
+  </div>
+
+  <div style="display: flex;">
+    <span class="btnStartVote" (click)="startVoting(voteTitle.value, voteTime.value, color.value)">Start voting</span>
+    <span class="btnStartVote" (click)="cancelVote()">Cancel active vote</span>
+  </div>
+  <p class="myInfo">{{messageInfo}}</p>
+</div>
+
+<div id="voteResaults" [style.color]="votes?.color">
+  <h3 *ngIf="winningVote !== ''">{{winningVote}}</h3>
+
+  <div *ngIf="!isSetup">
+    <div id="voteSubBox" [ngClass]="{'hide': hide}">
+      <h3 *ngIf="votes?.title !== ''">{{votes?.title}}</h3>
+
+
+      <div class="voteOptionBox" style="border: none !important;" *ngIf="votes?.options.length > 0">
+        <div class="voteShow" *ngFor="let vote of votes?.options;index as i">
+          {{i + 1}}. {{vote.name}}<span class="activeBar" [style.width.px]="getWidth(getPercent(i))"></span>
+          <span class="passiveBar"></span><span class="optPercent">{{getPercent(i)}}%</span></div>
+      </div>
+    </div>
+  </div>
+</div>

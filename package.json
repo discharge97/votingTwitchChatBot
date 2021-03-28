@@ -1,0 +1,29 @@
+{
+  "name": "twitch",
+  "version": "1.0.1",
+  "description": "Twitch chat donation notifier with OPay integration",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nexe": "^3.3.2",
+    "npm": "^6.14.2",
+    "socket.io": "^2.3.0",
+    "tmi.js": "^1.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build-exe": "nexe index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Aleksandar Stojadinovic",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}

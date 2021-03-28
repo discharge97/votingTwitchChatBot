@@ -1,0 +1,142 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#voteform{
+    max-width: 500px;
+    margin: auto;
+}
+
+.voteOptionBox{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 500px;
+    padding: 0.5em;
+    margin: auto;
+    margin-top: 1em;
+    
+    
+    .voteOption{
+        padding: 0.2em;
+        margin: 0.2em;
+        border-radius: 10px;
+        cursor: default;
+        transition: background-color 100ms linear;
+        
+        &:hover{
+            background-color: rgba(0, 0, 0, 0.075);
+        }
+        
+        span{
+            padding: 0.25em;
+            background-color: lightgray;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+            text-align: center;
+            display: inline-block;
+            margin-right: 0.5em;
+            transition: background-color 100ms linear;
+            
+            &:hover{
+                background-color: crimson;
+                color: white;
+            }
+        }
+    }
+}
+
+#favcolor{
+    margin-top: 1em;
+}
+
+.formTime{
+    width: 60px !important;
+    text-align: center;
+}
+
+.formInput{
+    border: none;
+    border-bottom: 3px solid darkviolet;
+    border-radius: 5px;
+    width: 350px;
+    margin: 0.5em;
+    margin-top: 1em;
+    font-size: 16px;
+}
+
+.btnStartVote, .btnAdd{
+    margin: auto;
+    margin-top: 1em;
+    padding: 0.75em;
+    // border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: darkviolet;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.btnStartVote + .btnStartVote{
+    margin-left: 0em;
+    background-color: brown;
+}
+
+.voteOptionBox > div.voteShow{
+    margin-bottom: 1em;
+}
+
+.voteResaults > .voteShowBox.voteShowBox{
+    border: none !important;
+}
+
+.btnAdd {
+    padding: 0.5em !important;
+}
+
+h3{
+    text-align: center;
+}
+
+.myInfo{
+    font-style: italic;
+}
+
+.activeBar, .passiveBar{
+    height: 5px;
+    border-radius: 5px;
+    display: block;
+    position: absolute;
+    max-width: 485px;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+
+.passiveBar{
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100%;
+}
+
+.hide{
+    transform: scaleY(0);
+}
+
+#voteSubBox{
+    transition: transform 250ms linear;
+    transform-origin: top;
+}
+
+.activeBar{
+background-color:goldenrod;
+z-index: 9;
+transition: width linear 300ms;
+}
+
+.optPercent{
+    float: right;
+}
+
